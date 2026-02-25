@@ -23,3 +23,16 @@ var func = (sumnum) => {
 }
 
 func(sumnum);
+
+
+var multiply = (a,b) => a*b;
+
+function multipurpose(a,b, callback)
+{
+console.log("sum of the given  numeber is: ", (a+b));
+
+console.log("Product of the given number evaluated through callback  is: ", callback(a,b));
+
+}
+
+multipurpose(10, 20, multiply);

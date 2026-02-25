@@ -9,3 +9,7 @@ var os = require('os')
 
 var user = os.userInfo()
 console.log("User Details: ", user)
+
+fs.appendFile('greetings.txt', `Hello happy reading ${user.username} the fs module.`,  () => {
+    console.log("File created through fs module!")
+})
