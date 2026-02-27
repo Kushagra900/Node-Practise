@@ -1,18 +1,19 @@
-//different modules in js
+const express = require('express')
 
-//fs module creates a file and adds a message inside it.
+const app = express()
 
-//os gives detail about the user
-
-var fs = require('fs')
-var os = require('os')
-
-var user = os.userInfo()
-console.log("User Details: ", user)
-
-fs.appendFile('greetings.txt', `Hello happy reading ${user.username} the fs module.`,  () => {
-    console.log("File created through fs module!")
+app.get('/', function(req, res){
+    res.send("Welcome to the server");
 })
 
-
-
+app.get('/detail', (req, res)=>{
+    var deatil = {
+        name: "Kushagra",
+        age: 24,
+        city: "Gorakhpur"
+    }
+    res.send(JSON.stringify(deatil))
+})
+app.listen(4000, () => {
+    console.log("listening at 4000")
+})
